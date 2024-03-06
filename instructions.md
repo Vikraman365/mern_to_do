@@ -19,3 +19,15 @@
 
 - do `npm run dev` to run our server
 - you need to install `ES7 React/Redux/GraphQL/React-Native` snippets extension in your vs code to get the snippets
+
+
+## now lets write our server
+- create a folder  `server` and  `cd server`
+- open terminal and type `npm init -y`
+    - this means we are creating a package.json file with default values
+- in terminal type `npm install express mongoose cors nodemon`
+- open `package.json` and add the below code in scripts
+    `"start":"nodemon index.js"`
+- create a file `index.js` 
+- in the terminal type `npm start`
+
