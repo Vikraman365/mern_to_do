@@ -18,3 +18,4 @@
     - react-icons is used to get the icons
 
 - do `npm run dev` to run our server
+- you need to install `ES7 React/Redux/GraphQL/React-Native` snippets extension in your vs code to get the snippets
