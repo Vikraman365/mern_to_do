@@ -19,6 +19,12 @@ function Home() {
     }
     ,[])
 
+    const  handleEdit = (id)=>{
+      axios.put('http://localhost:3001/update/'+id)
+      .then(result=>console.log(result))
+      .catch(err=>console.log(err))
+    }
+
 
 
   return (
@@ -32,8 +38,11 @@ function Home() {
         :
         todos.map(todo => (
             <div className='task'>
+              <div className='checkbox' onClick={()=> handleEdit(todo._id)}>
               <BsCircleFill className='icon'/>
-                {todo.task}
+              </div>
+                
+                {todo.task} 
             
             <div>
               <span><BsFillTrashFill className='icon'/></span>
