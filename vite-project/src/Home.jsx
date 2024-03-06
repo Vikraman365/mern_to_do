@@ -2,7 +2,7 @@
 import React, { useState,useEffect } from 'react'
 import Create from './Create'
 import axios from 'axios'
-import { BsCircleFill,BsFillTrashFill } from "react-icons/bs";
+import { BsCircleFill,BsFillCheckCircleFill,BsFillTrashFill } from "react-icons/bs";
 // type rfce and press tab to get this snippet 
 // this snippet is  called react functional component snippet
 // rfce full form is react functional component export
@@ -21,7 +21,7 @@ function Home() {
 
     const  handleEdit = (id)=>{
       axios.put('http://localhost:3001/update/'+id)
-      .then(result=>console.log(result))
+      .then(result=>{location.reload()})
       .catch(err=>console.log(err))
     }
 
@@ -39,10 +39,16 @@ function Home() {
         todos.map(todo => (
             <div className='task'>
               <div className='checkbox' onClick={()=> handleEdit(todo._id)}>
-              <BsCircleFill className='icon'/>
+              {todo.done?
+              <BsFillCheckCircleFill className='icon'></BsFillCheckCircleFill>
+                : <BsCircleFill className='icon'/>
+            }
+             
               </div>
                 
-                {todo.task} 
+             <p className={todo.done? "line_through":""}>
+               {todo.task} 
+              </p>   
             
             <div>
               <span><BsFillTrashFill className='icon'/></span>
