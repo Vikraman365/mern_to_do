@@ -5,8 +5,10 @@ const TodoModel=require("./models/Todo")
 const app=express()
 app.use(cors())
 app.use(express.json())
+require('dotenv').config()
+db_url= process.env.db_url
 
-mongoose.connect("mongodb://localhost:27017/test")
+mongoose.connect(db_url)
 
 
 app.get('/get',(req,res)=>{
