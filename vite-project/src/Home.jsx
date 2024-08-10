@@ -13,20 +13,20 @@ function Home() {
     // and a function called setTodos to update the state variable
 
     useEffect(()=>{
-        axios.get('http://localhost:3001/get')
+        axios.get('https://mern-to-do-8jfp.onrender.com/get')
         .then(result=>setTodos(result.data))
         .catch(err=>console.log(err))
     }
     ,[])
 
     const  handleEdit = (id)=>{
-      axios.put('http://localhost:3001/update/'+id)
+      axios.put('https://mern-to-do-8jfp.onrender.com/update/'+id)
       .then(result=>{location.reload()})
       .catch(err=>console.log(err))
     }
 
       const handleDelete = (id)=>{
-        axios.delete('http://localhost:3001/delete/'+id)
+        axios.delete('https://mern-to-do-8jfp.onrender.com/delete/'+id)
         .then(result=>{location.reload()})
         .catch(err=>console.log(err))
       }
